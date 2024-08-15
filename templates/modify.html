@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card card-body">
+            <form action="{{ url_for('modify', book_id=book.id) }}" method="POST">
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" value="{{ book.id }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="Bookname">Book Name</label>
+                    <input type="text" class="form-control" id="Bookname" name="Bookname" value="{{ book.book_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="availability">Availability</label>
+                    <input type="text" class="form-control" id="availability" name="availability" value="{{ book.availability }}">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
